@@ -1,0 +1,34 @@
+N = int(input())
+studentGrades = []
+
+# making the StudentList
+for i in range(N):
+    name = str(input())
+    grade = int(input())
+    studentGrades.append([name,grade])
+studentGrades.reverse()
+
+# making the gradeList from studentList
+gradeList=[]
+for profiles in studentGrades:
+    gradeList.append(profiles[1])
+
+# determining the lowest grades and poping them out
+lowest = min(gradeList)
+# print(lowest)
+gradeList.pop(gradeList.index(lowest))
+for grade in gradeList:
+    if grade == lowest:
+        gradeList.pop(gradeList.index(grade))
+
+# determining the second lowest grades
+secondLowest = []
+lowest2 = min(gradeList)
+# print(lowest2)
+for profile in studentGrades:
+    if profile[1] == lowest2:
+        # print(profile[0])
+        secondLowest.append(profile[0])
+# secondLowest.reverse()
+for names in secondLowest:
+    print(names)
