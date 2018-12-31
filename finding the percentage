@@ -1,0 +1,17 @@
+N = int(input())
+Iprofile = []
+Cprofile = []
+studentDictionary = {}
+for i in range(N):
+    Iprofile = input().split(' ')
+    Cprofile.append(Iprofile)
+
+for i in Cprofile:
+    name = i[0]
+    marks = [float(i[1]),float(i[2]),float(i[3])]
+    studentDictionary[name]=marks
+
+studentQuerried = input()
+marks = studentDictionary[studentQuerried]
+avg = sum(marks)/3
+print("{:0.2f}".format(avg))
