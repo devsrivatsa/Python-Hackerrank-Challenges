@@ -1,0 +1,11 @@
+n = input()
+A = list(map(int,input().split(' ')))
+winScore = max(A)
+A.pop(A.index(winScore))
+for score in A:
+    if score==winScore:
+        A.remove(score)
+        runner = max(A)
+    else:
+        runner= max(A)
+print(runner)
