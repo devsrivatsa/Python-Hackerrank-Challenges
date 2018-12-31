@@ -1,0 +1,20 @@
+S = input()
+
+alphanumeric = []
+alphabet=[]
+digit=[]
+lower=[]
+upper=[]
+
+for s in S:
+    alphanumeric.append(True) if s.isalnum() else alphanumeric.append(False)
+    alphabet.append(True) if s.isalpha() else alphabet.append(False)
+    digit.append(True) if s.isdigit() else digit.append(False)
+    lower.append(True) if s.islower() else lower.append(False)
+    upper.append(True) if s.isupper() else upper.append(False)
+
+print(True if alphanumeric.__contains__(True) else False)
+print(True if alphabet.__contains__(True) else False)
+print(True if digit.__contains__(True) else False)
+print(True if lower.__contains__(True) else False)
+print(True if upper.__contains__(True) else False)
