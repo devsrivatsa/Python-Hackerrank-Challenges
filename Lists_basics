@@ -1,0 +1,50 @@
+N = int(input())
+
+# lists which are required to iterate various elements in this porgram
+RawCommand = []
+rawCommandsList = []
+myList = []
+
+# making a list of string commands from input
+for i in range(N):
+    RawCommand = list(input().split(' '))
+    rawCommandsList.append(RawCommand)
+
+# iterating through the created command lists to direct the program perform to several operations
+for com in rawCommandsList:
+    length = len(com)
+
+    if length == 3:
+        command = com[0]
+        index = int(com[1])
+        element = int(com[2])
+        if command == 'insert':
+            myList.insert(index, element)
+        else:
+            print("invalid command")
+
+    elif length == 2:
+        command = com[0]
+        element = int(com[1])
+        if command == 'remove':
+            myList.remove(element)
+        elif command == 'append':
+            myList.append(element)
+        else:
+            print("invalid command")
+
+    elif length == 1:
+        command = com[0]
+        if command == 'print':
+            print(myList)
+        elif command == 'pop':
+            myList.pop()
+        elif command == 'sort':
+            myList = sorted(myList)
+        elif command == 'reverse':
+            myList.reverse()
+        else:
+            print("invalid command")
+    else:
+        print("invalid command")
+
