@@ -1,0 +1,13 @@
+import itertools
+rawI = input()
+k = int(rawI[-1])
+S = sorted(list(rawI[0:len(rawI)-2]))
+# lis = (list(itertools.permutations(S,k)))
+# print(lis)
+lis = sorted(list(itertools.combinations_with_replacement(S,k)))
+string =""
+for item in lis:
+    for i in item:
+        string += f'{i}'
+    print(string)
+    string=""
