@@ -1,0 +1,11 @@
+import itertools
+from itertools import product
+A = list(map(int,input().split(' ')))
+B = list(map(int,input().split(' ')))
+string = ""
+p = itertools.product(A,B)
+s = ""
+for i in p:
+    s += '{} '.format(i)
+
+print(s.strip())
