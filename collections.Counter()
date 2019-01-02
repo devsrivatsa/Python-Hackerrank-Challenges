@@ -1,1 +1,20 @@
+from collections import Counter
+X = int(input())
+shoesizes = Counter(list(map(int,input().split(' '))))
+N =int(input())
+querryList =[]
+sold = []
+for i in range(N):
+    inp = list(map(int,input().split(' ')))
+    size = inp[0]
+    price = inp[1]
+    querryList.append((size,price))
 
+for q in querryList:
+    if shoesizes[q[0]]>0:
+        sold.append(q[1])
+        shoesizes[q[0]]-=1
+    else:
+        pass
+
+print(sum(sold))
